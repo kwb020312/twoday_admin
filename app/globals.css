@@ -44,6 +44,7 @@
 }
 
 :root {
+  --main: #9fa41c;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -118,5 +119,17 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-main {
+    background-color: var(--main) !important;
+  }
+  .text-main {
+    color: var(--main) !important;
+  }
+  .border-main {
+    border-color: var(--main) !important;
   }
 }
