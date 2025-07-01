@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 
 import { Eye, EyeOff, Mail, Lock, ArrowRight, Shield } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,12 +17,12 @@ export default function Login() {
     // 로그인 로직 시뮬레이션
     setTimeout(() => {
       setIsLoading(false);
-      alert("로그인 성공! (데모)");
+      router.push("/");
     }, 2000);
   };
 
   return (
-    <div className="min-h-screen bg-main flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md mx-auto">
         <div className="bg-white/95 rounded-3xl shadow-2xl p-8 border border-main">
           {/* 헤더 */}
