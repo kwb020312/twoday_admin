@@ -1,27 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Eye, EyeOff, Mail, Lock, ArrowRight, Shield } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/store/auth";
 
 export default function Login() {
   const router = useRouter();
-  const { setIsLogin, isLogin } = useAuthStore();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    if (isLogin) router.push("/dashboard");
-  }, [isLogin, router]);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     // 로그인 로직 시뮬레이션
     setTimeout(() => {
       setIsLoading(false);
-      setIsLogin(true);
+      document.cookie = "isLogin=true; path=/"; // Set cookie for middleware
       router.push("/dashboard");
     }, 2000);
   };

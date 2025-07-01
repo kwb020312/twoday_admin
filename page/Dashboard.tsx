@@ -14,7 +14,6 @@ import {
   Calculator,
   Headphones,
 } from "lucide-react";
-
 import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
@@ -51,9 +50,6 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
-import { useEffect } from "react";
-import { useAuthStore } from "@/store/auth";
-import { useRouter } from "next/navigation";
 
 const data = {
   user: {
@@ -262,11 +258,6 @@ const data = {
 };
 
 export default function Dashboard() {
-  const { isLogin } = useAuthStore();
-  const router = useRouter();
-  useEffect(() => {
-    if (!isLogin) router.push("/");
-  }, [isLogin, router]);
   return (
     <SidebarProvider>
       <Sidebar variant="inset">
