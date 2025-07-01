@@ -50,6 +50,7 @@ import {
   SidebarRail,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 const data = {
   user: {
@@ -265,7 +266,7 @@ export default function Component() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
-                <a href="#">
+                <Link href="#">
                   <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                     <Globe className="size-4" />
                   </div>
@@ -275,7 +276,7 @@ export default function Component() {
                     </span>
                     <span className="truncate text-xs">Admin Dashboard</span>
                   </div>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -312,17 +313,15 @@ export default function Component() {
                           {item.items.map((subItem) => (
                             <SidebarMenuSubItem key={subItem.title}>
                               <SidebarMenuSubButton asChild>
-                                <a href={subItem.url}>
+                                <Link href={subItem.url}>
                                   <span>{subItem.title}</span>
-                                  {subItem.badge && (
-                                    <Badge
-                                      variant="secondary"
-                                      className="ml-auto"
-                                    >
-                                      {subItem.badge}
-                                    </Badge>
-                                  )}
-                                </a>
+                                  <Badge
+                                    variant="secondary"
+                                    className="ml-auto"
+                                  >
+                                    {0}
+                                  </Badge>
+                                </Link>
                               </SidebarMenuSubButton>
                             </SidebarMenuSubItem>
                           ))}
@@ -339,7 +338,7 @@ export default function Component() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
-                <a href="#">
+                <Link href="#">
                   <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-accent text-sidebar-accent-foreground">
                     <Settings className="size-4" />
                   </div>
@@ -349,7 +348,7 @@ export default function Component() {
                     </span>
                     <span className="truncate text-xs">{data.user.email}</span>
                   </div>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
