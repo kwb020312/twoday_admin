@@ -1,5 +1,8 @@
-import Dashboard from "@/page/Dashboard";
+import Login from "@/page/login/Login";
+import React from "react";
 
-export default function Home() {
-  return <Dashboard />;
+function LoginPage() {
+  return <Login />;
 }
+
+export default LoginPage;

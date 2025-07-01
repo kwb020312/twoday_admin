@@ -17,7 +17,7 @@ export default function Login() {
     // 로그인 로직 시뮬레이션
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/");
+      router.push("/dashboard");
     }, 2000);
   };
 
