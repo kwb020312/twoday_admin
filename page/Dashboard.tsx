@@ -265,7 +265,7 @@ export default function Dashboard() {
   const { isLogin } = useAuthStore();
   const router = useRouter();
   useEffect(() => {
-    if (isLogin) router.push("/dashboard");
+    if (!isLogin) router.push("/");
   }, [isLogin, router]);
   return (
     <SidebarProvider>
