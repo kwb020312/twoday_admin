@@ -51,6 +51,9 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useAuthStore } from "@/store/auth";
+import { useRouter } from "next/navigation";
 
 const data = {
   user: {
@@ -258,7 +261,12 @@ const data = {
   ],
 };
 
-export default function Component() {
+export default function Dashboard() {
+  const { isLogin } = useAuthStore();
+  const router = useRouter();
+  useEffect(() => {
+    if (isLogin) router.push("/dashboard");
+  }, [isLogin, router]);
   return (
     <SidebarProvider>
       <Sidebar variant="inset">

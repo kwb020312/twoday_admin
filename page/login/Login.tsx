@@ -3,9 +3,11 @@ import React, { useState } from "react";
 
 import { Eye, EyeOff, Mail, Lock, ArrowRight, Shield } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/store/auth";
 
 export default function Login() {
   const router = useRouter();
+  const { setIsLogin } = useAuthStore();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +19,7 @@ export default function Login() {
     // 로그인 로직 시뮬레이션
     setTimeout(() => {
       setIsLoading(false);
+      setIsLogin(true);
       router.push("/dashboard");
     }, 2000);
   };
