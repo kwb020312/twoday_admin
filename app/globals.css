@@ -14,7 +14,9 @@
 @theme inline {
   --color-main-50: var(--main-50);
   --color-main-100: var(--main-100);
+  --color-main-150: var(--main-150);
   --color-text-main-50: var(--text-main-50);
+  --color-text-main-100: var(--text-main-100);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -57,7 +59,9 @@
 :root {
   --main-50: #1f2c5c;
   --main-100: #1f3147;
+  --main-150: #151e40;
   --text-main-50: #8a8a8a;
+  --text-main-100: #cacaca;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

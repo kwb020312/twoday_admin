@@ -5,10 +5,12 @@ import Logo from "@/public/logo.svg";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import useLogout from "./hooks/useLogout";
 
 export default function Login() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
+  useLogout();
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
