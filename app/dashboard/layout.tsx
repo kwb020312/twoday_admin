@@ -39,7 +39,7 @@ function Layout({ children }: PropsWithChildren) {
 
 function NavigationTab({ title }: { title: string }) {
   return (
-    <div className="flex items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14">
+    <div className="flex items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14 cursor-pointer">
       <span>{title}</span>
       <ChevronDown />
     </div>
