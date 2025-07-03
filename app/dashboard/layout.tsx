@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from "react";
 
 function Layout({ children }: PropsWithChildren) {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       {/* 로고 및 로그아웃 */}
       <header className="w-full bg-main-50 py-5 px-10 flex justify-between items-center">
         <h1 className="font-bold text-2xl text-white">Twoday Admin</h1>
