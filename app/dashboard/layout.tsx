@@ -32,14 +32,14 @@ function Layout({ children }: PropsWithChildren) {
           <NavigationTab title="게시판 관리" />
         </div>
       </nav>
-      {children}
+      <div className="px-[180px] py-20">{children}</div>
     </div>
   );
 }
 
 function NavigationTab({ title }: { title: string }) {
   return (
-    <div className="flex items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14 cursor-pointer whitespace-nowrap">
+    <div className="flex select-none items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14 cursor-pointer whitespace-nowrap">
       <span>{title}</span>
       <ChevronDown />
     </div>
