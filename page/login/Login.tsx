@@ -36,7 +36,7 @@ export default function Login() {
         </div>
         <form onSubmit={handleSubmit}>
           {/* 아이디 비밀번호 */}
-          <div className="min-w-[500px] mt-10 flex flex-col gap-7.5">
+          <div className="lg:min-w-[500px] mt-10 flex flex-col gap-7.5">
             <Input type="text" placeholder="아이디*" name="id" required />
             <Input
               type="password"
