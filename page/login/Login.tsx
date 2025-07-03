@@ -25,7 +25,7 @@ export default function Login() {
   }
   return (
     <div className="w-full flex justify-center items-center h-full">
-      <div className="lg:p-12.5 p-5 bg-white rounded-2xl flex justify-center flex-col items-center">
+      <div className="lg:py-12.5 lg:px-12.5 py-5 bg-white rounded-2xl flex justify-center flex-col items-center">
         {/* 로고 */}
         <div className="px-3 py-3.5 bg-main-100 w-fit rounded-2xl">
           <Image src={Logo} alt="2Day Logo" />
@@ -55,7 +55,7 @@ export default function Login() {
       </div>
       {/* 로그인 경고 모달 */}
       {isModalOpen && (
-        <div className="absolute bg-black/50 inset-0 flex justify-center items-center">
+        <div className="absolute bg-black/50 w-full h-full flex justify-center items-center">
           <div className="bg-white rounded-2xl lg:w-[600px] px-12.5 py-7.5 shadow-2xl flex flex-col justify-between gap-20.5">
             <div className="mt-5 flex flex-col gap-8">
               <h3 className="font-bold text-xl">알림</h3>
