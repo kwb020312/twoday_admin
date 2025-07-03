@@ -17,7 +17,7 @@ function Layout({ children }: PropsWithChildren) {
       <hr />
       {/* 메뉴 */}
       <nav className="w-full bg-main-50 flex justify-between items-center">
-        <div className="flex overflow-x-auto px-10">
+        <div className="flex overflow-x-auto">
           <NavigationTab title="구매 / 배송대행, 무료픽업" />
           <NavigationTab title="입고/출고/픽업/반송 관리" />
           <NavigationTab title="회원 관리" />
@@ -39,7 +39,7 @@ function Layout({ children }: PropsWithChildren) {
 
 function NavigationTab({ title }: { title: string }) {
   return (
-    <div className="flex items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14 cursor-pointer">
+    <div className="flex items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14 cursor-pointer whitespace-nowrap">
       <span>{title}</span>
       <ChevronDown />
     </div>
