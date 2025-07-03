@@ -32,7 +32,7 @@ function Layout({ children }: PropsWithChildren) {
           <NavigationTab title="게시판 관리" />
         </div>
       </nav>
-      <div className="px-[180px] py-20">{children}</div>
+      <div className="lg:px-[180px] px-20 py-20">{children}</div>
     </div>
   );
 }
