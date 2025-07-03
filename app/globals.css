@@ -4,14 +4,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
-  font-family: "S-CoreDream";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
   font-style: normal;
   font-display: swap;
 }
 
 @theme inline {
+  --color-main-50: var(--main-50);
+  --color-main-100: var(--main-100);
+  --color-text-main-50: var(--text-main-50);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -52,7 +55,9 @@
 }
 
 :root {
-  --main: black;
+  --main-50: #1f2c5c;
+  --main-100: #1f3147;
+  --text-main-50: #8a8a8a;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -124,7 +129,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    font-family: "S-CoreDream", sans-serif;
+    font-family: "Pretendard", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
