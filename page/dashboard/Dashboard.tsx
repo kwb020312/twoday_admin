@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   ChartConfig,
   ChartContainer,
@@ -8,6 +9,15 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { ChevronRight, Eye } from "lucide-react";
 import React from "react";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
@@ -27,6 +37,30 @@ const chartConfig = {
     color: "#0047FF",
   },
 } satisfies ChartConfig;
+
+// 리뷰 목데이터
+const reviewData = [
+  {
+    date: "2024.06.01",
+    content: "서비스가 정말 편리하고 빠릅니다! 앞으로도 자주 이용할 것 같아요.",
+  },
+  {
+    date: "2024.06.02",
+    content: "고객 지원이 친절해서 만족스러웠어요.",
+  },
+  {
+    date: "2024.06.03",
+    content: "UI가 직관적이고 사용하기 쉬워요.",
+  },
+  {
+    date: "2024.06.04",
+    content: "다양한 기능이 추가되면 더 좋을 것 같아요.",
+  },
+  {
+    date: "2024.06.05",
+    content: "빠른 응답과 깔끔한 디자인이 인상적입니다.",
+  },
+];
 
 function Dashboard() {
   // 마지막 날짜 데이터
@@ -69,12 +103,93 @@ function Dashboard() {
             </ChartContainer>
           </div>
         </div>
+        {/* 분리선 */}
+        <div className="bg-[#CACACA] h-[1px] w-full my-10" />
         {/* 최근 리뷰 */}
+        <div className="flex flex-col gap-7.5">
+          {/* 최근 리뷰 및 리뷰 페이지 이동 */}
+          <div className="w-full flex justify-between items-center">
+            <h3 className="font-semibold text-2xl">최근 리뷰</h3>
+            <div className="font-semibold text-xl text-main-50 flex items-center gap-2.5">
+              <span>리뷰 페이지 이동</span>
+              <ChevronRight />
+            </div>
+          </div>
+          {/* 리뷰 테이블 */}
+          <div className="">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>작성일</TableHead>
+                  <TableHead>리뷰 내용</TableHead>
+                  <TableHead>상세</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {reviewData.map((review, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{review.date}</TableCell>
+                    <TableCell>{review.content}</TableCell>
+                    <TableCell>
+                      <Button variant="outline" size="sm">
+                        <Eye className="w-4 h-4 mr-1" />
+                        보기
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
       </div>
       {/* 분리선 */}
       <div className="bg-main-100 w-[1px] mx-24 h-full" />
       {/* 메인 오른쪽 */}
-      <div className="w-full">111</div>
+      <div className="w-full">
+        <div className="flex flex-col gap-7.5">
+          {/* 처리할 배송대행 주문 */}
+          <div className="w-full flex justify-between items-center">
+            <h3 className="font-semibold text-2xl">처리할 배송대행 주문</h3>
+            <div className="font-semibold text-xl text-main-50 flex items-center gap-2.5">
+              <span>주문대행 페이지 이동</span>
+              <ChevronRight />
+            </div>
+          </div>
+          {/* 처리할 배송대행 주문 테이블 */}
+          <div className="">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>상태변경</TableHead>
+                  <TableHead>건수</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>배송 신청 확인 ▶ 물류 센터 이동중</TableCell>
+                  <TableCell>000</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>물류 센터 이동중 ▶ 배송비 측정 및 결제</TableCell>
+                  <TableCell>000</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>배송비 측정 및 결제 ▶ 해외 배송 현황</TableCell>
+                  <TableCell>000</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>해외 배송 현황 ▶ 배송 완료</TableCell>
+                  <TableCell>000</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+        {/* 분리선 */}
+        <div className="bg-[#CACACA] h-[1px] w-full my-10" />
+        <div className="flex flex-col gap-7.5"></div>
+      </div>
     </div>
   );
 }
