@@ -14,16 +14,19 @@ export default function NavigationTab({
   const [open, setOpen] = useState(false);
   const [submenuStyle, setSubmenuStyle] = useState<CSSProperties>({});
   const parentRef = useRef<HTMLDivElement>(null);
+  const [parentWidth, setParentWidth] = useState<number>();
 
   useEffect(() => {
     if (!parentRef.current) return;
 
     const rect = parentRef.current.getBoundingClientRect();
+    setParentWidth(rect.width);
     setSubmenuStyle({
       position: "absolute",
       top: rect.bottom + window.scrollY,
       left: rect.right + window.scrollX,
-      transform: "translate(-100%, 0)", // 오른쪽 최하단에 맞추기 위해
+      transform: "translate(-100%, 0)",
+      width: rect.width,
     });
   }, [open]);
 
@@ -37,10 +40,15 @@ export default function NavigationTab({
       <span>{title}</span>
       {submenus && submenus.length > 0 && <ChevronDown />}
       {open && submenus && submenus.length > 0 && (
-        <div style={submenuStyle} className="mt-2 bg-main-50 rounded-md z-50">
+        <div
+          style={{ ...submenuStyle, width: parentWidth }}
+          className="bg-main-50 z-50"
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+        >
           {submenus.map((item) => (
             <Link key={item.title} href={item.href} passHref>
-              <div className="px-4 py-2 hover:bg-main-150 text-text-main-100 cursor-pointer whitespace-nowrap">
+              <div className="px-4 py-2 hover:bg-main-150 text-text-main-100 cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis">
                 {item.title}
               </div>
             </Link>
