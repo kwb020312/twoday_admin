@@ -28,7 +28,7 @@ function Layout({ children }: PropsWithChildren) {
           ))}
         </div>
       </nav>
-      <div className="lg:px-[180px] px-20 py-20">{children}</div>
+      <div className="lg:px-[180px] p-4 lg:py-20">{children}</div>
     </div>
   );
 }
