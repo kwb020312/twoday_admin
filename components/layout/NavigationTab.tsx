@@ -39,7 +39,7 @@ export default function NavigationTab({
       {open && submenus && submenus.length > 0 && (
         <div style={submenuStyle} className="mt-2 bg-main-50 rounded-md z-50">
           {submenus.map((item) => (
-            <Link key={item.title} href={item.href} passHref legacyBehavior>
+            <Link key={item.title} href={item.href} passHref>
               <div className="px-4 py-2 hover:bg-main-150 text-text-main-100 cursor-pointer whitespace-nowrap">
                 {item.title}
               </div>
