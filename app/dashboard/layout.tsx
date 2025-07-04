@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import NavigationTab from "@/components/layout/NavigationTab";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
@@ -33,15 +33,6 @@ function Layout({ children }: PropsWithChildren) {
         </div>
       </nav>
       <div className="lg:px-[180px] px-20 py-20">{children}</div>
-    </div>
-  );
-}
-
-function NavigationTab({ title }: { title: string }) {
-  return (
-    <div className="flex select-none items-center text-text-main-100 px-5 font-semibold gap-2 hover:bg-main-150 min-h-14 cursor-pointer whitespace-nowrap">
-      <span>{title}</span>
-      <ChevronDown />
     </div>
   );
 }
