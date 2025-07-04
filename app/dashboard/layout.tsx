@@ -1,6 +1,7 @@
 import NavigationTab from "@/components/layout/NavigationTab";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
+import { MENUS } from "@/constants/menu";
 
 function Layout({ children }: PropsWithChildren) {
   return (
@@ -18,18 +19,13 @@ function Layout({ children }: PropsWithChildren) {
       {/* 메뉴 */}
       <nav className="w-full bg-main-50 flex justify-between items-center">
         <div className="flex overflow-x-auto">
-          <NavigationTab title="구매 / 배송대행, 무료픽업" />
-          <NavigationTab title="입고/출고/픽업/반송 관리" />
-          <NavigationTab title="회원 관리" />
-          <NavigationTab title="메인홈 관리" />
-          <NavigationTab title="몰 관리" />
-          <NavigationTab title="매출 관리" />
-          <NavigationTab title="배너 관리" />
-          <NavigationTab title="환경설정" />
-          <NavigationTab title="서비스 / 쇼핑몰 관리" />
-          <NavigationTab title="약관 / 정책 관리" />
-          <NavigationTab title="약관 / 정책 관리(영문)" />
-          <NavigationTab title="게시판 관리" />
+          {MENUS.map((menu) => (
+            <NavigationTab
+              key={menu.title}
+              title={menu.title}
+              submenus={menu.submenus}
+            />
+          ))}
         </div>
       </nav>
       <div className="lg:px-[180px] px-20 py-20">{children}</div>
