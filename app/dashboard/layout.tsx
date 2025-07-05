@@ -8,7 +8,9 @@ function Layout({ children }: PropsWithChildren) {
     <div className="w-full bg-white">
       {/* 로고 및 로그아웃 */}
       <header className="w-full bg-main-50 py-5 px-10 flex justify-between items-center">
-        <h1 className="font-bold text-2xl text-white">Twoday Admin</h1>
+        <Link href="/dashboard">
+          <h1 className="font-bold text-2xl text-white">Twoday Admin</h1>
+        </Link>
         <Link href={"/"}>
           <button className="bg-white text-main-50 font-bold text-sm rounded-sm w-[120px] h-10 cursor-pointer">
             로그아웃
@@ -29,7 +31,7 @@ function Layout({ children }: PropsWithChildren) {
           ))}
         </div>
       </nav>
-      <div className="lg:px-[180px] p-4 lg:py-20">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

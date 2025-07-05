@@ -68,7 +68,7 @@ function Dashboard() {
   const lastDate = lastData.date;
   const lastTotal = lastData.user;
   return (
-    <div className="">
+    <div className="lg:px-[180px] p-4 lg:py-20">
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-y-24 gap-x-48">
         {/* 1. Twoday 고객 현황 */}
         <div className="flex flex-col justify-between">
