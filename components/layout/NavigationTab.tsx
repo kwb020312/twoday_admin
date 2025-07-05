@@ -40,10 +40,8 @@ export default function NavigationTab({
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Link href={href} className="flex items-center gap-2">
-        <span>{title}</span>
-        <ChevronDown className={cn("transition-all", open && "rotate-180")} />
-      </Link>
+      <span>{title}</span>
+      <ChevronDown className={cn("transition-all", open && "rotate-180")} />
       {open && submenus && submenus.length > 0 && (
         <div
           style={{ ...submenuStyle, width: parentWidth }}
