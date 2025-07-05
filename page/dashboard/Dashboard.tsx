@@ -91,7 +91,7 @@ function Dashboard() {
                 <CartesianGrid vertical={false} />
                 <XAxis dataKey="date" tickLine={false} axisLine={false} />
                 <ChartTooltip content={<ChartTooltipContent />} />
-                <ChartLegend content={<ChartLegendContent payload={""} />} />
+                <ChartLegend content={<ChartLegendContent />} />
                 <Bar dataKey="user" fill="#0047FF" radius={4} barSize={25} />
               </BarChart>
             </ChartContainer>
