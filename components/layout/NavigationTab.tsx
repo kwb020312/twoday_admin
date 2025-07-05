@@ -6,9 +6,11 @@ import Link from "next/link";
 
 export default function NavigationTab({
   title,
+  href,
   submenus,
 }: {
   title: string;
+  href: string;
   submenus?: { title: string; href: string }[];
 }) {
   const [open, setOpen] = useState(false);
@@ -37,8 +39,10 @@ export default function NavigationTab({
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <span>{title}</span>
-      {submenus && submenus.length > 0 && <ChevronDown />}
+      <Link href={href} className="flex items-center gap-2">
+        <span>{title}</span>
+        {submenus && submenus.length > 0 && <ChevronDown />}
+      </Link>
       {open && submenus && submenus.length > 0 && (
         <div
           style={{ ...submenuStyle, width: parentWidth }}
@@ -47,7 +51,7 @@ export default function NavigationTab({
           onMouseLeave={() => setOpen(false)}
         >
           {submenus.map((item) => (
-            <Link key={item.title} href={item.href} passHref>
+            <Link key={item.title} href={`${href}/${item.href}`} passHref>
               <div className="px-4 py-2 hover:bg-main-150 text-text-main-100 cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis">
                 {item.title}
               </div>

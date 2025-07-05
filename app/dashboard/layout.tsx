@@ -23,6 +23,7 @@ function Layout({ children }: PropsWithChildren) {
             <NavigationTab
               key={menu.title}
               title={menu.title}
+              href={menu.href}
               submenus={menu.submenus}
             />
           ))}
