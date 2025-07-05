@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, CSSProperties } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function NavigationTab({
   title,
@@ -41,7 +42,7 @@ export default function NavigationTab({
     >
       <Link href={href} className="flex items-center gap-2">
         <span>{title}</span>
-        {submenus && submenus.length > 0 && <ChevronDown />}
+        <ChevronDown className={cn("transition-all", open && "rotate-180")} />
       </Link>
       {open && submenus && submenus.length > 0 && (
         <div
