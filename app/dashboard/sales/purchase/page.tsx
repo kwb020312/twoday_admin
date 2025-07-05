@@ -9,7 +9,7 @@ function PurchasePage() {
   return (
     <div>
       {/* 타이틀 */}
-      <div className="px-44.5 py-6.5 border-b border-[#CACACA]">
+      <div className="lg:px-44.5 px-14.5 py-6.5 border-b border-[#CACACA]">
         <h1 className="font-semibold text-2xl">구매대행</h1>
       </div>
       {/* 필터 & 테이블 */}
